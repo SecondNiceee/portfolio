@@ -2,9 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
-import { CircleArrowRight, Check, X, Zap, Search, Smartphone, Globe, FileCode, Layout, Image, Code, Server, AlertCircle } from "lucide-react"
+import { CircleArrowRight, Check, X, Zap, Search, Smartphone, Globe, FileCode, Layout, Image as ImageIcon, Code, Server, AlertCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Navbar } from "@/components/navbar"
+import { PortfolioSlider } from "@/components/portfolio-slider"
+import { Logo } from "@/components/logo"
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -318,7 +320,7 @@ export default function Home() {
               <h3 className="text-xl font-medium mb-6 text-zinc-300">Как это реализовано</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
-                  <Image className="h-5 w-5 text-[#5100fd]" />
+                  <ImageIcon className="h-5 w-5 text-[#5100fd]" />
                   <span className="text-zinc-300 text-sm">Оптимизация изображений (WebP)</span>
                 </div>
                 <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
@@ -331,6 +333,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="relative z-20 py-12">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Коммерческие примеры
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Реальные проекты, которые приносят прибыль нашим клиентам.
+            </p>
+
+            <PortfolioSlider />
           </div>
         </div>
       </section>
@@ -590,7 +608,7 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
-              <img src="/logo.jpg" alt="NiceSite" className="h-10 w-auto rounded mb-4" />
+              <Logo className="mb-4" />
               <p className="text-zinc-400 text-sm">Создаем быстрые сайты, приносящие прибыль</p>
             </div>
             

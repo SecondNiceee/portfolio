@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "NiceSite — Создание быстрых сайтов",
   description: "Создаем быстрые, современные сайты, приносящие прибыль. SEO-оптимизация, адаптивный дизайн, удобная админка.",
   icons: {
-    icon: "/favicon.jpg",
+    icon: "/favicon.svg",
   },
 }
 

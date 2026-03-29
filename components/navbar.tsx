@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { MobileMenu } from "./mobile-menu"
+import { Logo } from "./logo"
 
 export function Navbar() {
   const [isVisible, setIsVisible] = useState(true)
@@ -36,7 +36,7 @@ export function Navbar() {
       <div className="bg-black/50 backdrop-blur-[120px] rounded-full px-8 py-3 flex items-center gap-8 shadow-lg border border-white/10 w-full">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/logo.jpg" alt="NiceSite" width={150} height={32} className="h-8 w-auto rounded" />
+          <Logo />
         </div>
 
         {/* Desktop Menu Links */}
@@ -48,10 +48,10 @@ export function Navbar() {
             SEO
           </Link>
           <Link
-            href="#admin"
+            href="#portfolio"
             className="px-4 py-2 text-zinc-300 hover:text-white transition-colors duration-300"
           >
-            Админка
+            Примеры
           </Link>
           <Link
             href="#pricing"
