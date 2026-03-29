@@ -121,11 +121,13 @@ export default function Home() {
 
       {/* 3D Letter N - Volumetric Letter */}
       <div
-        className="fixed right-0 top-0 w-1/2 h-screen pointer-events-none z-10 flex items-center justify-center"
+        className="fixed pointer-events-none z-10"
         style={{
           opacity: linesOpacity,
           transform: `scale(${linesScale})`,
           perspective: "3000px",
+          right: "-8%",
+          top: "-15%",
         }}
       >
         <div 
@@ -160,7 +162,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-20 container mx-auto px-6 lg:px-12 pt-24 pb-32 min-h-screen flex flex-col justify-center">
+      <div className="relative z-20 container mx-auto px-6 lg:px-12 pt-40 pb-32 min-h-screen flex flex-col justify-center">
         <div className="max-w-3xl">
           {/* Status Toggle */}
           <div className="flex items-center gap-3 mb-12 animate-fade-in">
