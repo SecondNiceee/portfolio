@@ -203,7 +203,7 @@ export default function Home() {
       </div>
 
       {/* SEO Section */}
-      <section id="seo" className="relative z-20 py-24">
+      <section id="seo" className="relative z-20 py-12">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
@@ -270,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* Performance Section */}
-      <section id="performance" className="relative z-20 py-24">
+      <section id="performance" className="relative z-20 py-12">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
@@ -336,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="relative z-20 py-24 pb-32">
+      <section id="pricing" className="relative z-20 py-12 pb-12">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
@@ -447,7 +447,7 @@ export default function Home() {
       </section>
 
       {/* Admin Panel Section */}
-      <section id="admin" className="relative z-20 py-24">
+      <section id="admin" className="relative z-20 py-12">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
@@ -517,7 +517,7 @@ export default function Home() {
       </section>
 
       {/* What You Need Section */}
-      <section id="requirements" className="relative z-20 py-24">
+      <section id="requirements" className="relative z-20 py-12">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
