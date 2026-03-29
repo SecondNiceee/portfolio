@@ -117,36 +117,69 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3D Letter N - Black version */}
+      {/* 3D Letter N - With volumetric background */}
       <div
         className="fixed right-0 top-0 w-1/2 h-screen pointer-events-none z-10 flex items-center justify-center"
         style={{
           opacity: linesOpacity,
           transform: `scale(${linesScale})`,
-          perspective: "1000px",
+          perspective: "2000px",
         }}
       >
+        {/* Volumetric background sphere/glow */}
+        <div 
+          className="absolute inset-0 animate-float-3d"
+          style={{
+            transformStyle: "preserve-3d",
+            background: "radial-gradient(circle at 50% 40%, rgba(81, 0, 253, 0.15) 0%, rgba(81, 0, 253, 0.05) 30%, transparent 70%)",
+            borderRadius: "50%",
+            width: "600px",
+            height: "600px",
+            filter: "blur(80px)",
+            boxShadow: "0 0 200px rgba(81, 0, 253, 0.3), inset -100px -100px 200px rgba(0, 0, 0, 0.8)",
+          }}
+        />
+
+        {/* 3D depth layers */}
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float-3d"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: `translateZ(${-i * 8}px)`,
+              width: "550px",
+              height: "550px",
+              borderRadius: "50%",
+              background: `radial-gradient(circle at 50% 40%, rgba(81, 0, 253, ${Math.max(0, 0.1 - i * 0.003)}) 0%, transparent 70%)`,
+              filter: `blur(${40 + i * 2}px)`,
+            }}
+          />
+        ))}
+        
         <div 
           className="relative text-[40vw] font-bold leading-none select-none animate-float-3d"
           style={{
             transformStyle: "preserve-3d",
+            textShadow: "0 0 60px rgba(81, 0, 253, 0.4), 0 0 120px rgba(81, 0, 253, 0.2)",
+            zIndex: 10,
           }}
         >
           {/* Back shadow layers for 3D depth - darker tones */}
-          {[...Array(25)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <span
               key={i}
               className="absolute inset-0"
               style={{
-                transform: `translateZ(${-i * 5}px)`,
-                color: `rgb(${Math.max(0, 20 - i)}, ${Math.max(0, 20 - i)}, ${Math.max(0, 20 - i)})`,
+                transform: `translateZ(${-i * 4}px)`,
+                color: `rgb(${Math.max(0, 15 - i)}, ${Math.max(0, 15 - i)}, ${Math.max(0, 15 - i)})`,
               }}
             >
               N
             </span>
           ))}
           
-          {/* Main N - Black with subtle highlights */}
+          {/* Main N - Black with purple glow */}
           <span
             className="relative block"
             style={{
@@ -154,21 +187,21 @@ export default function Home() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              filter: "drop-shadow(0 0 40px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 80px rgba(20, 20, 20, 0.5))",
-              transform: "translateZ(20px)",
+              filter: "drop-shadow(0 0 50px rgba(81, 0, 253, 0.5)) drop-shadow(0 0 100px rgba(81, 0, 253, 0.3))",
+              transform: "translateZ(15px)",
             }}
           >
             N
           </span>
           
-          {/* Subtle edge highlight */}
+          {/* Edge highlight with purple glow */}
           <span
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-30"
             style={{
-              WebkitTextStroke: "1px #333",
+              WebkitTextStroke: "2px rgba(81, 0, 253, 0.6)",
               WebkitTextFillColor: "transparent",
-              filter: "blur(2px)",
-              transform: "translateZ(25px)",
+              filter: "blur(1px) drop-shadow(0 0 30px rgba(81, 0, 253, 0.4))",
+              transform: "translateZ(20px)",
             }}
           >
             N
