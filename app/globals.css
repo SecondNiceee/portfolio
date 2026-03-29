@@ -201,19 +201,33 @@
   }
 
   .animate-line-race-1 {
-    animation: line-race 1.6s ease-in-out infinite;
+    animation: line-race 15s ease-in-out infinite;
   }
 
   .animate-line-race-2 {
-    animation: line-race 1.2s ease-in-out infinite;
+    animation: line-race 12s ease-in-out infinite;
   }
 
   .animate-line-race-3 {
-    animation: line-race 2s ease-in-out infinite;
+    animation: line-race 18s ease-in-out infinite;
   }
 
   .animate-line-race-4 {
-    animation: line-race 1s ease-in-out infinite;
+    animation: line-race 10s ease-in-out infinite;
+  }
+
+  /* 3D floating animation for letter N */
+  @keyframes float-3d {
+    0%, 100% {
+      transform: rotateY(-15deg) rotateX(5deg) translateY(0px);
+    }
+    50% {
+      transform: rotateY(-10deg) rotateX(8deg) translateY(-20px);
+    }
+  }
+
+  .animate-float-3d {
+    animation: float-3d 6s ease-in-out infinite;
   }
 
   .animate-fade-in {
