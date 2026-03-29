@@ -1,12 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
-import { CircleArrowRight, ArrowRight } from "lucide-react"
+import { CircleArrowRight, Check, X, Zap, Search, Smartphone, Globe, FileCode, Layout, Image, Code, Server, AlertCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Navbar } from "@/components/navbar"
-
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -15,7 +13,6 @@ export default function Home() {
     const handleScroll = () => {
       const scrollY = window.scrollY
       const viewportHeight = window.innerHeight
-      // Calculate progress from 0 to 1 over one viewport height
       const progress = Math.min(scrollY / viewportHeight, 1)
       setScrollProgress(progress)
     }
@@ -24,23 +21,21 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Calculate opacity and scale based on scroll
   const linesOpacity = 1 - scrollProgress
-  const linesScale = 1 - scrollProgress * 0.3 // Scale from 1 to 0.7
+  const linesScale = 1 - scrollProgress * 0.3
 
-  const scrollToCapabilities = () => {
-    const capabilitiesSection = document.getElementById("capabilities")
-    if (capabilitiesSection) {
-      capabilitiesSection.scrollIntoView({ behavior: "smooth" })
+  const scrollToSeo = () => {
+    const seoSection = document.getElementById("seo")
+    if (seoSection) {
+      seoSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   return (
     <main className="relative min-h-[200vh] bg-black text-white overflow-hidden">
-
-
       <Navbar />
 
+      {/* Animated Lines Background */}
       <div
         className="fixed inset-0 z-0 w-screen h-screen pointer-events-none transition-all duration-100"
         style={{
@@ -58,7 +53,6 @@ export default function Home() {
             className="w-full h-full"
             preserveAspectRatio="xMidYMid slice"
           >
-            {/* Animated Purple Lines */}
             <path
               d="M510.086 0.543457L507.556 840.047C506.058 1337.18 318.091 1803.4 1.875 2094.29"
               stroke="#4C00EC"
@@ -91,8 +85,6 @@ export default function Home() {
               strokeDasharray="100px 99999px"
               className="animate-line-race-4"
             />
-
-            {/* Static White Background Lines */}
             <path
               opacity="0.2"
               d="M929.828 0.543457L927.328 829.877C925.809 1334 737.028 1807.4 418.435 2106"
@@ -125,7 +117,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3D Letter N */}
+      {/* 3D Letter N - Black version */}
       <div
         className="fixed right-0 top-0 w-1/2 h-screen pointer-events-none z-10 flex items-center justify-center"
         style={{
@@ -135,48 +127,47 @@ export default function Home() {
         }}
       >
         <div 
-          className="relative text-[40vw] font-bold leading-none select-none"
+          className="relative text-[40vw] font-bold leading-none select-none animate-float-3d"
           style={{
-            transform: "rotateY(-15deg) rotateX(5deg)",
             transformStyle: "preserve-3d",
           }}
         >
-          {/* Back shadow layers for 3D depth */}
-          {[...Array(20)].map((_, i) => (
+          {/* Back shadow layers for 3D depth - darker tones */}
+          {[...Array(25)].map((_, i) => (
             <span
               key={i}
-              className="absolute inset-0 text-zinc-950"
+              className="absolute inset-0"
               style={{
-                transform: `translateZ(${-i * 4}px)`,
-                opacity: 1 - i * 0.04,
+                transform: `translateZ(${-i * 5}px)`,
+                color: `rgb(${Math.max(0, 20 - i)}, ${Math.max(0, 20 - i)}, ${Math.max(0, 20 - i)})`,
               }}
             >
               N
             </span>
           ))}
           
-          {/* Main N with gradient and glow */}
+          {/* Main N - Black with subtle highlights */}
           <span
-            className="relative block animate-pulse"
+            className="relative block"
             style={{
-              background: "linear-gradient(135deg, #5100fd 0%, #8b5cf6 50%, #5100fd 100%)",
+              background: "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #000000 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              filter: "drop-shadow(0 0 60px rgba(81, 0, 253, 0.8)) drop-shadow(0 0 120px rgba(81, 0, 253, 0.4))",
+              filter: "drop-shadow(0 0 40px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 80px rgba(20, 20, 20, 0.5))",
               transform: "translateZ(20px)",
             }}
           >
             N
           </span>
           
-          {/* Glowing outline */}
+          {/* Subtle edge highlight */}
           <span
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 opacity-20"
             style={{
-              WebkitTextStroke: "2px #5100fd",
+              WebkitTextStroke: "1px #333",
               WebkitTextFillColor: "transparent",
-              filter: "blur(8px)",
+              filter: "blur(2px)",
               transform: "translateZ(25px)",
             }}
           >
@@ -185,7 +176,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Section */}
       <div className="relative z-20 container mx-auto px-6 lg:px-12 pt-24 pb-32 min-h-screen flex flex-col justify-center">
         <div className="max-w-3xl">
           {/* Status Toggle */}
@@ -193,168 +184,276 @@ export default function Home() {
             <div className="relative w-14 h-7 bg-gradient-to-r from-green-400 to-green-500 rounded-full">
               <div className="absolute right-1 top-1 w-5 h-5 bg-white rounded-full transition-transform duration-300" />
             </div>
-            <span className="text-sm text-zinc-300">Currently open to take on new clients.</span>
+            <span className="text-sm text-zinc-300">Открыты для новых клиентов</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light mb-8 leading-[1] animate-fade-in-up text-balance">
-            Just another boring agency
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 leading-[1.1] animate-fade-in-up text-balance">
+            Создаем быстрые, современные сайты, приносящие прибыль
           </h1>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-zinc-400 mb-12 animate-fade-in-up animation-delay-200">
-            We build custom applications, automations, and AI powered workflows.
-          </p>
+          {/* USP Badges */}
+          <div className="flex flex-wrap gap-4 mb-12 animate-fade-in-up animation-delay-200">
+            <div className="flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-2">
+              <Zap className="h-4 w-4 text-[#5100fd]" />
+              <span className="text-sm text-zinc-300">Загрузка за 1 секунду</span>
+            </div>
+            <div className="flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-2">
+              <Search className="h-4 w-4 text-[#5100fd]" />
+              <span className="text-sm text-zinc-300">Отличное SEO</span>
+            </div>
+            <div className="flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-4 py-2">
+              <span className="text-sm text-zinc-300">15+ Отзывов</span>
+            </div>
+          </div>
 
           {/* CTA Button */}
           <div className="animate-fade-in-up animation-delay-400">
             <Button
               size="lg"
-              onClick={scrollToCapabilities}
+              onClick={scrollToSeo}
               className="group bg-[#5100fd] hover:bg-[#6610ff] text-white px-8 py-6 text-base rounded-full transition-all duration-[650ms] hover:scale-[1.02]"
             >
-              Explore Capabilities
+              Узнать больше
               <CircleArrowRight className="ml-2 h-5 w-5 transition-transform duration-[650ms] group-hover:rotate-90" />
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Capabilities section with tabs */}
-      <section id="capabilities" className="relative z-20 py-24">
-        <div className="container p-12 rounded-2xl z-50 bg-(#09090b) border border-zinc-800 mx-auto px-6 lg:px-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-balance">Capabilities</h2>
+      {/* SEO Section */}
+      <section id="seo" className="relative z-20 py-24">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Ваш сайт будет готов к продвижению в Google и Яндекс
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Мы не просто рисуем дизайн, мы создаем инструмент, который поисковики любят и понимают.
+            </p>
 
-          <p className="text-lg md:text-xl text-zinc-400 mb-12">
-            We're built to solve complex business challenges—fast.
-          </p>
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <FileCode className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Техническая чистота</h3>
+                  <p className="text-zinc-400">Правильная структура заголовков (H1-H6), sitemap.xml и robots.txt.</p>
+                </div>
+              </div>
 
-          <Tabs defaultValue="development" className="w-full">
-            <TabsList className="bg-zinc-950 border border-zinc-800 p-1 mb-8 rounded-full">
-              <TabsTrigger
-                value="development"
-                className="text-zinc-500 data-[state=active]:bg-[#5100fd] data-[state=active]:text-white px-8 py-3 rounded-full transition-all"
-              >
-                Development
-              </TabsTrigger>
-              <TabsTrigger
-                value="automation"
-                className="text-zinc-500 data-[state=active]:bg-[#5100fd] data-[state=active]:text-white px-8 py-3 rounded-full transition-all"
-              >
-                Automation
-              </TabsTrigger>
-            </TabsList>
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Code className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Микроразметка</h3>
+                  <p className="text-zinc-400">Внедряем Schema.org, чтобы в поиске ваш сайт выглядел богаче.</p>
+                </div>
+              </div>
 
-            <TabsContent value="development" className="mt-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Smartphone className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Адаптивность</h3>
+                  <p className="text-zinc-400">Полное соответствие мобильным алгоритмам поисковиков.</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Zap className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Скорость</h3>
+                  <p className="text-zinc-400">Поисковики любят сайты, которые открываются без задержек.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Important Note */}
+            <div className="bg-zinc-900/80 border border-zinc-700 rounded-xl p-6">
+              <div className="flex items-start gap-4">
+                <AlertCircle className="h-6 w-6 text-amber-500 shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-lg font-medium mb-2">Важно знать</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Если вы только покупаете сайт на новый домен + хостинг, он получает «базу» для органического роста, 
+                    но для мгновенных заявок в первый месяц мы рекомендуем подключить контекстную рекламу. 
+                    Уже &quot;прогретому&quot; сайту можем улучшить конверсию, поработав с SEO.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Section */}
+      <section id="performance" className="relative z-20 py-24">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Сайт без замедлений
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Каждая секунда задержки стоит вам потерянных продаж.
+            </p>
+
+            {/* Why it matters */}
+            <div className="mb-12">
+              <h3 className="text-xl font-medium mb-6 text-zinc-300">Почему это важно</h3>
+              <div className="grid md:grid-cols-3 gap-6">
                 <div className="relative rounded-2xl border border-zinc-800 p-3">
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={2}
-                    spread={80}
-                    glow={true}
-                    disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                  />
-                  <div className="relative bg-(#0a0a0a) rounded-xl p-8">
-                    <h3 className="text-2xl font-light mb-4">Custom Applications</h3>
-                    <p className="text-zinc-400 leading-relaxed mb-6">
-                      We build scalable, performant web and mobile applications tailored to your specific business needs
-                      using modern frameworks and best practices.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-white hover:text-zinc-300 transition-colors duration-300 group"
-                    >
-                      <span className="underline">Learn More</span>
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
+                  <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                  <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                    <Globe className="h-8 w-8 text-[#5100fd] mb-4" />
+                    <h4 className="text-lg font-medium mb-2">SEO</h4>
+                    <p className="text-zinc-400 text-sm">Скоростные сайты ранжируются лучше поисковиками.</p>
                   </div>
                 </div>
+
                 <div className="relative rounded-2xl border border-zinc-800 p-3">
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={2}
-                    spread={80}
-                    glow={true}
-                    disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                  />
-                  <div className="relative bg-(#0a0a0a) rounded-xl p-8">
-                    <h3 className="text-2xl font-light mb-4">Full-Stack Solutions</h3>
-                    <p className="text-zinc-400 leading-relaxed mb-6">
-                      From frontend interfaces to backend infrastructure, we deliver complete solutions that integrate
-                      seamlessly with your existing systems.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-white hover:text-zinc-300 transition-colors duration-300 group"
-                    >
-                      <span className="underline">Learn More</span>
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
+                  <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                  <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                    <Zap className="h-8 w-8 text-[#5100fd] mb-4" />
+                    <h4 className="text-lg font-medium mb-2">Рост конверсии</h4>
+                    <p className="text-zinc-400 text-sm">Быстрые сайты продают на 20-30% лучше.</p>
+                  </div>
+                </div>
+
+                <div className="relative rounded-2xl border border-zinc-800 p-3">
+                  <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                  <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                    <Smartphone className="h-8 w-8 text-[#5100fd] mb-4" />
+                    <h4 className="text-lg font-medium mb-2">Мобильные клиенты</h4>
+                    <p className="text-zinc-400 text-sm">Пользователь не закроет вкладку, ожидая загрузку.</p>
                   </div>
                 </div>
               </div>
-            </TabsContent>
+            </div>
 
-            <TabsContent value="automation" className="mt-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative rounded-2xl border border-zinc-800 p-3">
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={2}
-                    spread={80}
-                    glow={true}
-                    disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                  />
-                  <div className="relative bg-(#0a0a0a) rounded-xl p-8">
-                    <h3 className="text-2xl font-light mb-4">AI-Powered Workflows</h3>
-                    <p className="text-zinc-400 leading-relaxed mb-6">
-                      Leverage cutting-edge AI technology to automate complex processes, reduce manual work, and unlock
-                      new capabilities for your business.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-white hover:text-zinc-300 transition-colors duration-300 group"
-                    >
-                      <span className="underline">Learn More</span>
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
-                  </div>
+            {/* How it's done */}
+            <div>
+              <h3 className="text-xl font-medium mb-6 text-zinc-300">Как это реализовано</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
+                  <Image className="h-5 w-5 text-[#5100fd]" />
+                  <span className="text-zinc-300 text-sm">Оптимизация изображений (WebP)</span>
                 </div>
-                <div className="relative rounded-2xl border border-zinc-800 p-3">
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={2}
-                    spread={80}
-                    glow={true}
-                    disabled={false}
-                    proximity={64}
-                    inactiveZone={0.01}
-                  />
-                  <div className="relative bg-(#0a0a0a) rounded-xl p-8">
-                    <h3 className="text-2xl font-light mb-4">Process Optimization</h3>
-                    <p className="text-zinc-400 leading-relaxed mb-6">
-                      Streamline your operations with intelligent automation that learns and adapts to your business
-                      patterns, saving time and resources.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-white hover:text-zinc-300 transition-colors duration-300 group"
-                    >
-                      <span className="underline">Learn More</span>
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
-                  </div>
+                <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
+                  <Code className="h-5 w-5 text-[#5100fd]" />
+                  <span className="text-zinc-300 text-sm">Чистый, минифицируемый код</span>
+                </div>
+                <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
+                  <Server className="h-5 w-5 text-[#5100fd]" />
+                  <span className="text-zinc-300 text-sm">Настройка кэширования и CDN</span>
                 </div>
               </div>
-            </TabsContent>
-          </Tabs>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="relative z-20 py-24 pb-32">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Честные цены без скрытых доплат
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Выберите формат сотрудничества, который подходит вашему бюджету. Все тарифы включают адаптивную версию для мобильных.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Basic Plan */}
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-8">
+                  <h3 className="text-2xl font-medium mb-2">Свой контроль</h3>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-4xl font-bold">3000</span>
+                    <span className="text-zinc-400">рублей</span>
+                  </div>
+                  <p className="text-zinc-400 text-sm mb-6">
+                    Идеально, если вы хотите сами выбирать и оплачивать услуги провайдеров.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Разработка сайта с нуля (лендинг или визитка)</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Настройка вашего домена и хостинга</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Базовая SEO-оптимизация</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Инструкция по управлению</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <X className="h-5 w-5 text-red-500" />
+                      <span className="text-zinc-500 text-sm">Оплата хостинга и домена отдельно</span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white py-6 rounded-full">
+                    Заказать за 3000 руб
+                  </Button>
+                </div>
+              </div>
+
+              {/* Best Choice Plan */}
+              <div className="relative rounded-2xl border-2 border-[#5100fd] p-3">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#5100fd] text-white text-xs font-medium px-4 py-1 rounded-full">
+                  Лучший выбор
+                </div>
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-8">
+                  <h3 className="text-2xl font-medium mb-2">Полный пакет</h3>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-4xl font-bold">5000</span>
+                    <span className="text-zinc-400">рублей</span>
+                  </div>
+                  <p className="text-zinc-400 text-sm mb-6">
+                    Все включено: мы берем на себя хостинг, домен и техническую поддержку.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Все из тарифа &quot;Свой контроль&quot;</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Хостинг и домен включены на год</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Расширенная SEO-оптимизация</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Техническая поддержка 30 дней</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Интеграция с Яндекс.Метрикой</span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full bg-[#5100fd] hover:bg-[#6610ff] text-white py-6 rounded-full">
+                    Заказать за 5000 руб
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
