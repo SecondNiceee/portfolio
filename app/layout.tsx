@@ -9,9 +9,11 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "NiceSite — Создание быстрых сайтов",
+  description: "Создаем быстрые, современные сайты, приносящие прибыль. SEO-оптимизация, адаптивный дизайн, удобная админка.",
+  icons: {
+    icon: "/favicon.jpg",
+  },
 }
 
 export default function RootLayout({
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         <LenisProvider>{children}</LenisProvider>
         <Analytics />

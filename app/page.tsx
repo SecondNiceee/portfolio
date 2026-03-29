@@ -375,6 +375,10 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Удобная админ-панель</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
                       <span className="text-zinc-300 text-sm">Инструкция по управлению</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -412,6 +416,10 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-green-500" />
+                      <span className="text-zinc-300 text-sm">Удобная админ-панель</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-green-500" />
                       <span className="text-zinc-300 text-sm">Хостинг и домен включены на год</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -437,6 +445,171 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Admin Panel Section */}
+      <section id="admin" className="relative z-20 py-24">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Удобная админ-панель
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Редактируйте сайт без программиста. Все изменения применяются мгновенно.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Layout className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Редактирование контента</h3>
+                  <p className="text-zinc-400">Текст, фото, SEO-настройки и прочие параметры сайта - все в одном месте.</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Zap className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Не влияет на скорость</h3>
+                  <p className="text-zinc-400">Показатели загрузки на мобильных от 80% (Google Page Speed) или менее 1.5 секунды.</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <FileCode className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Удобное разделение</h3>
+                  <p className="text-zinc-400">Все разбито по секциям: главный экран, услуги, преимущества, цены, контакты и другие.</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl border border-zinc-800 p-3">
+                <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                <div className="relative bg-zinc-900/50 rounded-xl p-6">
+                  <Globe className="h-8 w-8 text-[#5100fd] mb-4" />
+                  <h3 className="text-xl font-medium mb-2">Быстрая публикация</h3>
+                  <p className="text-zinc-400">Изменения с админки попадают на сайт в течение 30 секунд.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Screenshots */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-xl overflow-hidden border border-zinc-800">
+                <img 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VbRLyK1MZkDWiruhUbZfLbMpcqeXwo.png" 
+                  alt="Админ-панель: редактирование секций"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-zinc-800">
+                <img 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dDvbkvqI1JKQaL9EH2R8MKWeTLl154.png" 
+                  alt="Админ-панель: настройки сайта"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Need Section */}
+      <section id="requirements" className="relative z-20 py-24">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
+              Что нужно, чтобы ваш сайт заработал?
+            </h2>
+            <p className="text-lg text-zinc-400 mb-10 max-w-3xl">
+              Полный расчет затрат на запуск вашего сайта.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center justify-between bg-zinc-900/50 rounded-xl p-5 border border-zinc-800">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#5100fd]/20 flex items-center justify-center">
+                    <span className="text-[#5100fd] font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Заказать услугу</h3>
+                    <p className="text-sm text-zinc-400">Разработка сайта под ключ</p>
+                  </div>
+                </div>
+                <span className="text-xl font-bold">3000 - 5000 руб</span>
+              </div>
+
+              <div className="flex items-center justify-between bg-zinc-900/50 rounded-xl p-5 border border-zinc-800">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#5100fd]/20 flex items-center justify-center">
+                    <span className="text-[#5100fd] font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Домен</h3>
+                    <p className="text-sm text-zinc-400">Адрес вашего сайта (например, site.ru)</p>
+                  </div>
+                </div>
+                <span className="text-xl font-bold">200 - 500 руб</span>
+              </div>
+
+              <div className="flex items-center justify-between bg-zinc-900/50 rounded-xl p-5 border border-zinc-800">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#5100fd]/20 flex items-center justify-center">
+                    <span className="text-[#5100fd] font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Хостинг</h3>
+                    <p className="text-sm text-zinc-400">Рекомендуем Beget - качественный и быстрый</p>
+                  </div>
+                </div>
+                <span className="text-xl font-bold">220 руб/мес</span>
+              </div>
+            </div>
+
+            {/* Total */}
+            <div className="bg-[#5100fd]/10 border border-[#5100fd]/30 rounded-xl p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-medium mb-1">Итого для старта:</h3>
+                  <p className="text-sm text-zinc-400">Единоразово + ежемесячный хостинг</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-3xl font-bold text-[#5100fd]">от 3420 руб</span>
+                  <p className="text-sm text-zinc-400">+ 220 руб/мес</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="relative z-20 py-12 border-t border-zinc-800">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+              <img src="/logo.jpg" alt="NiceSite" className="h-10 w-auto rounded mb-4" />
+              <p className="text-zinc-400 text-sm">Создаем быстрые сайты, приносящие прибыль</p>
+            </div>
+            
+            <div className="flex flex-col items-center md:items-end gap-4">
+              <div className="flex items-center gap-4">
+                <a href="https://t.me/username" className="text-zinc-400 hover:text-white transition-colors">
+                  Telegram
+                </a>
+                <a href="https://wa.me/79001234567" className="text-zinc-400 hover:text-white transition-colors">
+                  WhatsApp
+                </a>
+              </div>
+              <p className="text-zinc-500 text-sm">
+                &copy; 2026 NiceSite. Все права защищены.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }

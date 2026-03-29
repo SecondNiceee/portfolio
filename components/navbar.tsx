@@ -3,8 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { ResourcesDropdown } from "./resources-dropdown"
-import { ToolsDropdown } from "./tools-dropdown"
 import { MobileMenu } from "./mobile-menu"
 
 export function Navbar() {
@@ -38,21 +36,34 @@ export function Navbar() {
       <div className="bg-black/50 backdrop-blur-[120px] rounded-full px-8 py-3 flex items-center gap-8 shadow-lg border border-white/10 w-full">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/webrenew-brandmark.png" alt="webrenew" width={150} height={32} className="h-8 w-auto" />
+          <Image src="/logo.jpg" alt="NiceSite" width={150} height={32} className="h-8 w-auto rounded" />
         </div>
 
         {/* Desktop Menu Links */}
         <div className="hidden md:flex items-center justify-end gap-4 flex-1 pr-4">
-          {/* Dropdown Container */}
-          <div className="flex items-center justify-between rounded-full border border-zinc-700">
-            <ResourcesDropdown />
-            <ToolsDropdown />
-          </div>
           <Link
-            href="/contact"
+            href="#seo"
+            className="px-4 py-2 text-zinc-300 hover:text-white transition-colors duration-300"
+          >
+            SEO
+          </Link>
+          <Link
+            href="#admin"
+            className="px-4 py-2 text-zinc-300 hover:text-white transition-colors duration-300"
+          >
+            Админка
+          </Link>
+          <Link
+            href="#pricing"
+            className="px-4 py-2 text-zinc-300 hover:text-white transition-colors duration-300"
+          >
+            Цены
+          </Link>
+          <Link
+            href="#contact"
             className="px-[18px] py-[10px] rounded-full border border-[#5100fd] bg-[#5100fd]/50 text-white font-medium hover:scale-105 transition-transform duration-500"
           >
-            Contact
+            Связаться
           </Link>
         </div>
 
