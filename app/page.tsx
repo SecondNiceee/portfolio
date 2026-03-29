@@ -133,42 +133,27 @@ export default function Home() {
             zIndex: 10,
           }}
         >
-          {/* Deep 3D volumetric layers - from back to front */}
-          {[...Array(80)].map((_, i) => {
-            const depth = i - 40; // Center at 0
-            const intensity = Math.max(0, 1 - Math.abs(depth) / 40);
-            const brightness = Math.floor(255 * (0.1 + intensity * 0.4));
+          {/* 3D volumetric layers - simplified */}
+          {[...Array(25)].map((_, i) => {
+            const depth = i - 12; // Center at 0
+            const intensity = Math.max(0, 1 - Math.abs(depth) / 12);
+            const brightness = Math.floor(30 * intensity);
             
             return (
               <span
                 key={i}
                 className="absolute inset-0"
                 style={{
-                  transform: `translateZ(${depth * 3}px)`,
+                  transform: `translateZ(${depth * 4}px)`,
                   color: `rgb(${brightness}, ${brightness}, ${brightness})`,
-                  opacity: intensity * 0.95,
+                  opacity: intensity * 0.8,
                   fontWeight: 900,
-                  letterSpacing: "-0.02em",
                 }}
               >
                 N
               </span>
             );
           })}
-          
-          {/* Front glossy layer */}
-          <span
-            className="relative block"
-            style={{
-              color: "#ffffff",
-              opacity: 0.3,
-              textShadow: "0 0 40px rgba(255, 255, 255, 0.4), 0 0 20px rgba(81, 0, 253, 0.2)",
-              transform: "translateZ(120px)",
-              fontWeight: 900,
-            }}
-          >
-            N
-          </span>
         </div>
       </div>
 
@@ -321,7 +306,7 @@ export default function Home() {
                   <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
                   <div className="relative bg-zinc-900/50 rounded-xl p-6">
                     <Smartphone className="h-8 w-8 text-[#5100fd] mb-4" />
-                    <h4 className="text-lg font-medium mb-2">Мобильные клиенты</h4>
+                    <h4 className="text-lg font-medium mb-2">Мобиль��ые клиенты</h4>
                     <p className="text-zinc-400 text-sm">Пользователь не закроет вкладку, ожидая загрузку.</p>
                   </div>
                 </div>
