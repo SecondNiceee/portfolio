@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { LenisProvider } from "@/components/lenis-provider"
+import { VisitorTracker } from "@/components/visitor-tracker"
 import "./globals.css"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         <LenisProvider>{children}</LenisProvider>
+        <VisitorTracker />
         <Analytics />
       </body>
     </html>
