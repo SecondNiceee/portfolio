@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 
 const integrations = [
   {
@@ -53,9 +54,12 @@ const Integrations = () => {
           {integrations.map((integration, i) => (
             <li key={i}>
               <Card className="p-6 bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-colors">
-                <img
+                <Image
                   src={integration.image || "/placeholder.svg"}
                   alt={integration.title}
+                  width={56}
+                  height={56}
+                  quality={70}
                   className="w-14 h-14 object-contain"
                 />
                 <h3 className="mb-2 mt-4 text-lg font-medium text-white">{integration.title}</h3>

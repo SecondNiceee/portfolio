@@ -20,7 +20,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
         </DialogHeader>
         <div className="flex flex-col gap-4 pt-4">
           <p className="text-zinc-400">
-            Напишите мне в Telegram, и я отвечу в ближайшее время.
+            Напишите мне в Telegram, и я свяжусь с вами моментально.
           </p>
           <Button
             asChild
