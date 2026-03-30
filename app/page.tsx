@@ -126,11 +126,11 @@ export default function Home() {
           opacity: linesOpacity,
           transform: `scale(${linesScale})`,
           perspective: "3000px",
-          right: "5%",
-          top: "10%",
+          right: "30%",
+          top: "30%",
         }}
       >
-        <div 
+        <div
           className="relative text-[40vw] font-bold leading-none select-none animate-float-3d"
           style={{
             transformStyle: "preserve-3d",
@@ -142,7 +142,7 @@ export default function Home() {
             const depth = i - 12; // Center at 0
             const intensity = Math.max(0, 1 - Math.abs(depth) / 12);
             const brightness = Math.floor(30 * intensity);
-            
+
             return (
               <span
                 key={i}
@@ -262,8 +262,8 @@ export default function Home() {
                 <div>
                   <h4 className="text-lg font-medium mb-2">Важно знать</h4>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    Если вы только покупаете сайт на новый домен + хостинг, он получает «базу» для органического роста, 
-                    но для мгновенных заявок в первый месяц мы рекомендуем подключить контекстную рекламу. 
+                    Если вы только покупаете сайт на новый домен + хостинг, он получает «базу» для органического роста,
+                    но для мгновенных заявок в первый месяц мы рекомендуем подключить контекстную рекламу.
                     Уже &quot;прогретому&quot; сайту можем улучшить конверсию, поработав с SEO.
                   </p>
                 </div>
@@ -518,15 +518,15 @@ export default function Home() {
             {/* Screenshots */}
             <div className="grid md:grid-cols-2 gap-6">
               <div className="rounded-xl overflow-hidden border border-zinc-800">
-                <img 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VbRLyK1MZkDWiruhUbZfLbMpcqeXwo.png" 
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VbRLyK1MZkDWiruhUbZfLbMpcqeXwo.png"
                   alt="Админ-панель: редактирование секций"
                   className="w-full h-auto"
                 />
               </div>
               <div className="rounded-xl overflow-hidden border border-zinc-800">
-                <img 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dDvbkvqI1JKQaL9EH2R8MKWeTLl154.png" 
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dDvbkvqI1JKQaL9EH2R8MKWeTLl154.png"
                   alt="Админ-панель: настройки сайта"
                   className="w-full h-auto"
                 />
@@ -613,7 +613,7 @@ export default function Home() {
               <Logo className="mb-4" />
               <p className="text-zinc-400 text-sm">Создаем быстрые сайты, приносящие прибыль</p>
             </div>
-            
+
             <div className="flex flex-col items-center md:items-end gap-4">
               <div className="flex items-center gap-4">
                 <a href="https://t.me/username" className="text-zinc-400 hover:text-white transition-colors">
