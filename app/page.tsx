@@ -3,24 +3,37 @@
 import { Button } from "@/components/ui/button"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
 import { CircleArrowRight, Check, X, Zap, Search, Smartphone, Globe, FileCode, Layout, Image as ImageIcon, Code, Server, AlertCircle } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Navbar } from "@/components/navbar"
 import { PortfolioSlider } from "@/components/portfolio-slider"
 import { Logo } from "@/components/logo"
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0)
+  const rafRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
+    let lastProgress = 0
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const viewportHeight = window.innerHeight
-      const progress = Math.min(scrollY / viewportHeight, 1)
-      setScrollProgress(progress)
+      if (rafRef.current) clearTimeout(rafRef.current)
+      
+      rafRef.current = setTimeout(() => {
+        const scrollY = window.scrollY
+        const viewportHeight = window.innerHeight
+        const progress = Math.min(scrollY / viewportHeight, 1)
+        
+        if (Math.abs(progress - lastProgress) > 0.01) {
+          lastProgress = progress
+          setScrollProgress(progress)
+        }
+      }, 0)
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafRef.current) clearTimeout(rafRef.current)
+    }
   }, [])
 
   const linesOpacity = 1 - scrollProgress
@@ -323,7 +336,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
                   <ImageIcon className="h-5 w-5 text-[#5100fd]" />
-                  <span className="text-zinc-300 text-sm">Оптимизация изображений (WebP)</span>
+                  <span className="text-zinc-300 text-sm">Оптимизация изоб��ажений (WebP)</span>
                 </div>
                 <div className="flex items-center gap-3 bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
                   <Code className="h-5 w-5 text-[#5100fd]" />
