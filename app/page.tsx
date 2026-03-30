@@ -126,8 +126,8 @@ export default function Home() {
           opacity: linesOpacity,
           transform: `scale(${linesScale})`,
           perspective: "3000px",
-          right: "-8%",
-          top: "-15%",
+          right: "5%",
+          top: "10%",
         }}
       >
         <div 
