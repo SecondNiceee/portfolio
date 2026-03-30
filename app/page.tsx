@@ -310,7 +310,7 @@ export default function Home() {
                   <GlowingEffect blur={0} borderWidth={2} spread={80} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
                   <div className="relative bg-zinc-900/50 rounded-xl p-6">
                     <Smartphone className="h-8 w-8 text-[#5100fd] mb-4" />
-                    <h4 className="text-lg font-medium mb-2">Мобиль��ые клиенты</h4>
+                    <h4 className="text-lg font-medium mb-2">Мобильные клиенты</h4>
                     <p className="text-zinc-400 text-sm">Пользователь не закроет вкладку, ожидая загрузку.</p>
                   </div>
                 </div>
