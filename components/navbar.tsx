@@ -30,11 +30,12 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-50 px-6 w-full max-w-7xl transition-all duration-700 ease-in-out ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
         isVisible ? "top-8 opacity-100" : "-top-24 opacity-0"
       }`}
     >
-      <div className="bg-black/50 backdrop-blur-[120px] rounded-full px-8 py-3 flex items-center gap-8 shadow-lg border border-white/10 w-full">
+      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
+        <div className="bg-black/50 backdrop-blur-[120px] rounded-full px-8 py-3 flex items-center gap-8 shadow-lg border border-white/10 w-full">
         {/* Logo */}
         <div className="flex items-center">
           <Logo />
@@ -73,6 +74,7 @@ export function Navbar() {
         <div className="flex md:hidden items-center justify-end flex-1 pr-4">
           <MobileMenu />
         </div>
+      </div>
       </div>
     </nav>
   )
