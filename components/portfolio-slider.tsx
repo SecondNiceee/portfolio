@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -91,10 +92,13 @@ export function PortfolioSlider() {
           {projects.map((project) => (
             <div key={project.id} className="w-full flex-shrink-0">
               <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top"
+                  fill
+                  quality={70}
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
