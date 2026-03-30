@@ -34,7 +34,7 @@ export function Navbar() {
         isVisible ? "top-8 opacity-100" : "-top-24 opacity-0"
       }`}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
+      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
         <div className="bg-black/50 backdrop-blur-[120px] rounded-full px-8 py-3 flex items-center gap-8 shadow-lg border border-white/10 w-full">
         {/* Logo */}
         <div className="flex items-center">

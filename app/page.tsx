@@ -162,7 +162,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-20 container mx-auto px-6 lg:px-12 pt-40 pb-32 min-h-screen flex flex-col justify-center">
+      <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 lg:px-12 pt-40 pb-32 min-h-screen flex flex-col justify-center">
         <div className="max-w-3xl">
           {/* Status Toggle */}
           <div className="flex items-center gap-3 mb-12 animate-fade-in">
@@ -208,7 +208,7 @@ export default function Home() {
 
       {/* SEO Section */}
       <section id="seo" className="relative z-20 py-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Ваш сайт будет готов к продвижению в Google и Яндекс
@@ -275,7 +275,7 @@ export default function Home() {
 
       {/* Performance Section */}
       <section id="performance" className="relative z-20 py-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Сайт без замедлений
@@ -341,7 +341,7 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="relative z-20 py-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Коммерческие примеры
@@ -357,7 +357,7 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section id="pricing" className="relative z-20 py-12 pb-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Честные цены без скрытых доплат
@@ -468,7 +468,7 @@ export default function Home() {
 
       {/* Admin Panel Section */}
       <section id="admin" className="relative z-20 py-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Удобная админ-панель
@@ -538,7 +538,7 @@ export default function Home() {
 
       {/* What You Need Section */}
       <section id="requirements" className="relative z-20 py-12">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="bg-zinc-950/90 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 text-balance">
               Что нужно, чтобы ваш сайт заработал?
@@ -607,7 +607,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer id="contact" className="relative z-20 py-12 border-t border-zinc-800">
-        <div className="container mx-auto px-6 lg:px-12">
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
               <Logo className="mb-4" />
